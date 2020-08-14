@@ -1,99 +1,104 @@
+import 'package:clay_containers/clay_containers.dart';
 import 'package:flutter/material.dart';
-import 'package:neumorphic/neumorphic.dart';
 
 class SignIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffFFE8FF),
+      backgroundColor: Colors.white,
       body: Container(
-        child: Column(
-          children: [
-            ClipPath(
-              child: Container(
-                padding: EdgeInsets.only(left: 10, top: 40, right: 20),
-                height: 280.0,
-                width: double.infinity,
-                alignment: Alignment.centerLeft,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        colorFilter: ColorFilter.mode(
-                            Color(0xFF6200CA), BlendMode.color),
-                        image: AssetImage("assets/images/particles.gif"),
-                        fit: BoxFit.cover),
-                    gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Color(0xFF6200CA),
-                        Color(0xFF7C009C),
-                      ],
-                    )),
-                child: Text(
-                  "Create Account",
-                  style: TextStyle(
-                    color: Color(0xffE6D2F5),
-                    fontSize: 27,
-                    fontFamily: "Futura",
+        height: double.infinity,
+        child: SingleChildScrollView(
+                  child: Column(
+            children: [
+              ClipPath(
+                child: Container(
+                  padding: EdgeInsets.only(left: 10, top: 40, right: 20),
+                  height: 280.0,
+                  width: double.infinity,
+                  alignment: Alignment.centerLeft,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          colorFilter: ColorFilter.mode(
+                              Color(0xFF6200CA), BlendMode.color),
+                          image: AssetImage("assets/images/particles.gif"),
+                          fit: BoxFit.cover),
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          Color(0xFF6200CA),
+                          Color(0xFF7C009C),
+                        ],
+                      )),
+                  child: Text(
+                    "Create Account",
+                    style: TextStyle(
+                      color: Color(0xffE6D2F5),
+                      fontSize: 27,
+                      fontFamily: "Futura",
+                    ),
                   ),
                 ),
+                clipper: BottomWaveClipper(),
               ),
-              clipper: BottomWaveClipper(),
-            ),
-            SizedBox(
-              height: 40.0,
-            ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
-              child: Column(
-                children: [
-                  Container(
-                    decoration: BoxDecoration(boxShadow: [
-                      BoxShadow(
-                          color: Color(0xffFFE8FF),
-                          spreadRadius: 2,
-                          offset: Offset(0, 12))
-                    ]),
-                    child: TextField(
-                      decoration: InputDecoration(
-                          hintText: "EMAIL",
-                          hintStyle: TextStyle(
-                            fontFamily: "Futura",
-                          )),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 30.0,
-                  ),
-                  TextField(
-                    decoration: InputDecoration(
-                        hintText: "PASSWORD",
-                        hintStyle: TextStyle(
-                          fontFamily: "Futura",
-                        )),
-                  ),
-                  SizedBox(
-                    height: 30.0,
-                  ),
-                  NeuTextField(
-                    decoration: InputDecoration(
-                      hintText: "CONFIRM PASSWORD",
-                      hintStyle: TextStyle(
-                        fontFamily: "Futura",
+              SizedBox(
+                height: 40.0,
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                child: Column(
+                  children: [
+                    ClayContainer(
+                      color: Color(0xFFF2F2F2),
+                      child: TextField(
+                        decoration: InputDecoration(
+                            hintText: "EMAIL",
+                            border: InputBorder.none,
+                            contentPadding: EdgeInsets.only(left: 20),
+                            hintStyle: TextStyle(
+                              fontFamily: "Futura",
+                            )),
                       ),
                     ),
-                  )
-                  // TextField(
-                  //   decoration: InputDecoration(
-                  //       hintText: "CONFIRM PASSWORD",
-                  //       hintStyle: TextStyle(
-                  //         fontFamily: "Futura",
-                  //       )),
-                  // ),
-                ],
-              ),
-            )
-          ],
+                    SizedBox(
+                      height: 30.0,
+                    ),
+                    ClayContainer(
+                      color: Color(0xFFF2F2F2),
+                      child: TextField(
+                        decoration: InputDecoration(
+                            hintText: "PASSWORD",
+                             border: InputBorder.none,
+                            contentPadding: EdgeInsets.only(left: 20),
+                            hintStyle: TextStyle(
+                              fontFamily: "Futura",
+                            )),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 30.0,
+                    ),
+                    ClayContainer(
+                      color: Color(0xFFF2F2F2),
+                      
+                      child: TextField(
+                        decoration: InputDecoration(
+                            hintText: "CONFIRM PASSWORD",
+                             border: InputBorder.none,
+
+                            contentPadding: EdgeInsets.only(left: 20),
+                            hintStyle: TextStyle(
+                              fontFamily: "Futura",
+                            )),
+                      ),
+                    ),
+                    
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
