@@ -1,10 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blog_project/src/Router/router.gr.dart';
-import 'package:flutter_blog_project/src/screens/StarterScreen/sign_up_page.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
-class SignIn extends StatelessWidget {
+class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +34,7 @@ class SignIn extends StatelessWidget {
                         ],
                       )),
                   child: NeumorphicText(
-                    "Log In",
+                    "Create Account",
                     style: NeumorphicStyle(
                       disableDepth: true,
                     ),
@@ -94,11 +93,30 @@ class SignIn extends StatelessWidget {
                             )),
                       ),
                     ),
+                    SizedBox(
+                      height: 30.0,
+                    ),
+                    Neumorphic(
+                      margin: EdgeInsets.only(top: 2, bottom: 4),
+                      style: NeumorphicStyle(
+                        depth: NeumorphicTheme.embossDepth(context),
+                        boxShape: NeumorphicBoxShape.stadium(),
+                      ),
+                      child: TextField(
+                        decoration: InputDecoration(
+                            hintText: "CONFIRM PASSWORD",
+                            border: InputBorder.none,
+                            contentPadding: EdgeInsets.only(left: 20),
+                            hintStyle: TextStyle(
+                              fontFamily: "Futura",
+                            )),
+                      ),
+                    ),
                   ],
                 ),
               ),
               SizedBox(
-                height: 100.0,
+                height: 30.0,
               ),
               Container(
                 width: 200.0,
@@ -115,20 +133,19 @@ class SignIn extends StatelessWidget {
                     )),
                 child: FlatButton(
                   child: Text(
-                    "LOG IN",
+                    "SIGN UP",
                     style: TextStyle(fontFamily: "Futura", color: Colors.white),
                   ),
-                  onPressed: () async{
-                     ExtendedNavigator.of(context).push(Routes.homePage);
-                  },
+                  onPressed: () {},
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 30.0,
               ),
               GestureDetector(
                 onTap: () async{
-                  ExtendedNavigator.of(context).push(Routes.signUp);
+                 ExtendedNavigator.of(context).push(Routes.InitialRoute);
+                  // ExtendedNavigator.of(context).push(Routes.signUp);
                 },
                 child: Container(
                   child: RichText(
@@ -141,7 +158,7 @@ class SignIn extends StatelessWidget {
                             fontSize: 16.0),
                         children: [
                           TextSpan(
-                            text: "SIGN UP",
+                            text: "LOG IN",
                             style: TextStyle(
                               decoration: TextDecoration.underline,
                               color: Color(0xff9582A7),
