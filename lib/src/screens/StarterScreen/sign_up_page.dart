@@ -15,7 +15,7 @@ class SignUp extends StatelessWidget {
             children: [
               ClipPath(
                 child: Container(
-                  padding: EdgeInsets.only(left: 10, top: 100, right: 20),
+                  padding: EdgeInsets.only(left: 10, top: 80, right: 20),
                   height: 280.0,
                   width: double.infinity,
                   alignment: Alignment.center,

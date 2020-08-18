@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blog_project/src/Router/router.gr.dart';
-import 'package:flutter_blog_project/src/screens/StarterScreen/sign_up_page.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
 class SignIn extends StatelessWidget {
@@ -16,7 +15,7 @@ class SignIn extends StatelessWidget {
             children: [
               ClipPath(
                 child: Container(
-                  padding: EdgeInsets.only(left: 10, top: 100, right: 20),
+                  padding: EdgeInsets.only(left: 10, top: 80, right: 20),
                   height: 280.0,
                   width: double.infinity,
                   alignment: Alignment.center,

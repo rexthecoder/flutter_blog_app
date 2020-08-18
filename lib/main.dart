@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'src/Router/router.gr.dart';
-import 'src/screens/StarterScreen/sign_in_page.dart';
+
 
 void main() {
   runApp(MyApp());
